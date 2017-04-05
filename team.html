@@ -42,8 +42,10 @@ permalink: /team/
 
 window.onload = function(){
 
-  var resetMask = function(){
-    setTimeout(function(){
+  var clear;
+
+  function clearMask(){
+    clear = setTimeout(function(){
       $(".team-mask").fadeOut(800);
       $(".team-member").removeClass("active");
     }, 2000);
@@ -59,7 +61,8 @@ window.onload = function(){
       $(this).addClass("active");
       var searchStr = ".team-mask.team-mask_" + $(this).data('member');
       $(searchStr).fadeIn(800);
-      resetMask();
+      clearTimeout(clear);
+      clearMask();
     }
   })
 
