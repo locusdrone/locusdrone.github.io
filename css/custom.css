@@ -24,3 +24,21 @@ h6, h5, h4, h3, h2, h1 {
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.1);
 }
+.team-member {
+  color: #898989;
+  cursor: pointer;
+  margin: 1rem 0;
+  padding: 1rem 0;
+}
+.team-member h4 {
+  margin: 0;
+}
+.team-member:hover, .team-member.active {
+  color: inherit;
+}
+.team-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}

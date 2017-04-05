@@ -1,0 +1,9 @@
+title: Locus
+name: GIS
+description: "Open source, 3D printed drone for mapping."
+baseurl: ""
+url: ""
+
+exclude: [README.md]
+
+markdown: kramdown

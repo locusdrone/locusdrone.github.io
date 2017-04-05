@@ -1,0 +1,68 @@
+---
+layout: default
+permalink: /team/
+---
+
+{% include nav.html %}
+
+<div class="row text-center">
+  <div class="small-offset-1 small-2 columns">
+    <div class="team-member" data-member="amir"><h4>Amir</h4></div>
+  </div>
+  <div class="small-2 columns">
+    <div class="team-member" data-member="bogdan"><h4>Bogdan</h4></div>
+  </div>
+  <div class="small-2 columns">
+    <div class="team-member" data-member="eoin"><h4>Eoin</h4></div>
+  </div>
+  <div class="small-2 columns">
+    <div class="team-member" data-member="jeroen"><h4>Jeroen</h4></div>
+  </div>
+  <div class="end small-2 columns">
+    <div class="team-member" data-member="lucia"><h4>Lucía</h4></div>
+  </div>
+</div>
+
+<div class="row ">
+  <div class="columns">
+    <div style="position:relative;">
+      <img class="team-mask team-mask_amir" src="{{site.baseurl}}/img/mask-amir.png">
+      <img class="team-mask team-mask_bogdan" src="{{site.baseurl}}/img/mask-bogdan.png">
+      <img class="team-mask team-mask_eoin" src="{{site.baseurl}}/img/mask-eoin.png">
+      <img class="team-mask team-mask_jeroen" src="{{site.baseurl}}/img/mask-jeroen.png">
+      <img class="team-mask team-mask_lucia" src="{{site.baseurl}}/img/mask-lucia.png">
+      <img src="{{site.baseurl}}/img/locus-team.jpg" alt="">
+    </div>
+  </div>
+</div>
+
+<div style="height:60px;"></div>
+
+<script>
+
+window.onload = function(){
+
+  var resetMask = function(){
+    setTimeout(function(){
+      $(".team-mask").fadeOut(800);
+      $(".team-member").removeClass("active");
+    }, 2000);
+  }
+
+  $(".team-member").click(function(event){
+    if($(this).hasClass("active")){
+      $(this).removeClass("active");
+      $(".team-mask").fadeOut(800);
+    } else {
+      $(".team-mask").fadeOut(800);
+      $(".team-member").removeClass("active");
+      $(this).addClass("active");
+      var searchStr = ".team-mask.team-mask_" + $(this).data('member');
+      $(searchStr).fadeIn(800);
+      resetMask();
+    }
+  })
+
+}
+
+</script>
